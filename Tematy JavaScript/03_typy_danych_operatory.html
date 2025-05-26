@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age;
+        age = 18;
+    
+        console.log(age);
+            
+        let odp;
+            
+        if (age > 18){
+            odp = "Ma wiecej niż 18 lat!"
+        }else{
+            odp = "Ma mniej niż 18 lat!";
+        }
+        
+        console.log(odp);
+    </script>
+
+    <script>
+        let colors = ["red","green","blue"];
+
+        colors.push = "yellow";
+
+        colors.shift();
+
+        console.log(colors)
+    </script>
+
+    <script>
+        function checkType (){
+            let a = 15;
+            
+            return typeof(a);
+        }
+        console.log("The type of the variable is:"+" "+checkType());
+    </script>
+
+    <script>
+        let car = {
+            make: "toyota",
+            model: "corrola",
+            year: "2023"
+        }
+
+        car.color = "red";
+
+        console.log(car);
+    </script>
+
+    <script>
+        function sum (c,d){
+            let f = c;
+            let s = d;
+            
+            let wynik = f+s;
+
+            return wynik;
+        }
+        console.log(sum(10,5));
+    </script>
+
+    <button type="button" onclick="sum(13,5)">Test</button>
+    <script>
+        function sum (c,d){
+            let f = c;
+            let s = d;
+            
+            let wynik = f+s;
+            
+            console.log(wynik);
+        }
+    </script>
+</body>
+</html>

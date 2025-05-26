@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkSqrt (x){
+            if(x > 0){
+                return Math.sqrt(x);
+            }else{
+                return("Błąd")
+            }
+        }
+        document.write(checkSqrt(16))
+    </script>
+    <br>
+    <script>
+        function showDate(){
+            let date = new Date();
+
+            let day = date.getDate();
+            let month = date.getMonth()+1;
+            let year = date.getFullYear();
+
+            return(day + "-" + month  + "-" + year)
+        }
+        document.write(showDate())
+    </script>
+    <br>
+    <script>
+        function reverseWord(){
+            let slowo = "Hello"
+
+            let slowoR = slowo.split("").reverse().join("")
+
+            return slowoR;
+        }
+        document.write(reverseWord())
+    </script>
+    <br>
+    <script>
+        function liczCzas(){
+            let date = new Date();
+
+            let dateB = new Date(2007, 7, 15)
+
+            let wynik = date - dateB;
+
+            let wynikS = parseInt(wynik)
+
+            let wynikD = wynikS/(1000 * 3600 * 24)
+
+            let wynikA = wynikD.toFixed(0)
+            
+            return wynikA;
+        }
+        document.write(liczCzas())
+    </script>
+    <br>
+    <script>
+        function showMax(a,b){
+            return Math.max(a,b);
+        }
+        document.write(showMax(5,6))
+    </script>
+    <script>
+        let rand = Math.random()
+        let randW = rand.toFixed(2)
+        let randY = randW * 100
+        let randP = randY.toFixed(0)
+
+        document.write(randP)
+    </script>
+</body>
+</html>

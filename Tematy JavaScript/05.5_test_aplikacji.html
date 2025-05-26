@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    2<script>
+        let pF = prompt("Podaj 1 cyfre: ")
+        let pS = prompt("Podaj 2 cyfre do mnożenia: ")
+
+        function mnozenie(e, r){
+            if(e > r){
+                return("pierwsza cyfra jest wieksz niż druga")
+            }else if(e < r){
+                return("druga cyfra jest wieksz niż pierwsza")
+            }else{
+                return("cyfry są takie same")
+            }
+        }
+        document.write(mnozenie(pF,pS));
+
+        document.write("<br>")
+
+        let wyn = prompt("Czy chcesz je przemnożyć?","y/n")
+
+        function mnozeniee(o, q, z){
+            if(o == "y"){
+                return q * z;
+            }else if(o == "n"){
+                return("Nie chciałeś mnożenia")
+            }else{
+                return("Źle wpisana odpowiedź!")
+            }
+        }
+
+        document.write("Wynik mnożenia: " + mnozeniee(wyn, pF, pS))
+    </script>
+    <form>
+        <input type="text" id="cyfraA">
+        <input type="text" id="cyfraB"> 
+        <button type="button" id="wyslij">Oblicz</button>
+    </form>
+    <script>
+        let a;
+        let b;
+
+        let aInput = document.getElementById("cyfraA");
+        let bInput = document.getElementById("cyfraB");
+        let sendButton = document.getElementById("wyslij");
+
+        sendButton.addEventListener("click", function(){
+            a = aInput.value;
+            b = bInput.value;
+
+            let pL = 12;
+            let pW = 14;
+            let dP = 18;
+
+            let wpL = false;
+            let wpW = true;
+            let wdP = false;
+
+            function pole(x,y){
+                return x*y;
+            }
+
+            let poleO = pole(a,b)
+
+            function cena(p, pLL, pWW, dPP, wpLL, wpWW, wdPP){
+                if(wpLL == true){
+                    return p * pLL;
+                }else if(wpWW == true){
+                    return p * pWW;
+                }else{
+                    return p * dPP
+                }
+            }
+
+            let cenaO = cena(poleO, pL, pW, dP, wpL, wpW, wdP)
+
+            console.log("pole: " + poleO + " cena: " + cenaO)
+        })
+    </script>
+</body>
+</html>

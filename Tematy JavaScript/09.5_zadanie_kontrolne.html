@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>Podaj Pierwsza cyfre: <input type="number" id="cyfraA"></label><br><br>n
+        <label>Podaj Drugą cyfre:<input type="number" id="cyfraB"></label><br><br>
+        <button type="button" id="wieksza">Wieksza</button>
+        <button type="button" id="mniejsza">Mniejsza</button>
+        <button type="button" id="pierwiastek">Pierwiastek</button>
+        <button type="button" id="potega">Potęga</button>
+    </form>
+    <p id="wO" style="color:red;"></p>
+    <script>
+        let ca = document.getElementById("cyfraA");
+        let cb = document.getElementById("cyfraB");
+
+        let wieksza = document.getElementById("wieksza");
+        let mniejsza = document.getElementById("mniejsza");
+        let pierwiastek = document.getElementById("pierwiastek");
+        let potega = document.getElementById("potega");
+
+        wieksza.addEventListener("click" , function(){
+            let a = ca.value;
+            let b = cb.value;
+            
+            let wynikW = Math.max(a,b);
+            if(!a || !b){
+                document.getElementById("wO").innerHTML = "<p style='color:red;'>Prosze podać dobrze dane</p>"
+            }else{
+                document.getElementById("wO").innerHTML = ("<p style='color:blue;'>" + wynikW + "</p>")
+            }
+            
+        })
+
+        mniejsza.addEventListener("click", function(){
+            let a = ca.value;
+            let b = cb.value;
+
+            let wynikM = Math.min(a,b);
+
+            if(!a || !b){
+                document.getElementById("wO").innerHTML = "<p style='color:red;'>Prosze podać dobrze dane</p>"
+            }else{
+                document.getElementById("wO").innerHTML = ("<p style='color:blue;'>" + wynikM + "</p>")
+            }
+        })
+
+        pierwiastek.addEventListener("click", function(){
+            console.log("klik")
+            let a = ca.value;
+            let b = cb.value;
+
+            let wynikP = Math.sqrt(a, b);
+
+            let wynikPO = wynikP.toFixed(2)
+
+            if(a === "" || b === ""){
+                document.getElementById("wO").innerHTML = "<p style='color:red;'>Prosze podać dobrze dane</p>"
+            }else{
+                document.getElementById("wO").innerHTML = ("<p style='color:blue;'>" + wynikPO + "</p>")
+            }
+        })
+
+        potega.addEventListener("click", function(){
+            let a = ca.value;
+            let b = cb.value;
+
+            let wynikPP = Math.pow(a, b)
+
+            if(!a || !b){
+                document.getElementById("wO").innerHTML = "<p style='color:red;'>Prosze podać dobrze dane</p>"
+            }else{
+                document.getElementById("wO").innerHTML = ("<p style='color:blue;'>" + wynikPP + "</p>")
+            }
+        })
+    </script>
+</body>
+</html>

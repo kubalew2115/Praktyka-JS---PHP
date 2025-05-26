@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz + Interakcje JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="back">
+    <div class="div1">
+        <form>
+            <label>Imię: <input type="text" id="imie"></label><br><br>
+            <label>Nazwisko: <input type="text" id="nazwisko"></label><br><br>
+
+            <label> Zaakceptuj regulamin <input type="checkbox" id="reg"></label><br><br>
+            
+            <label>Wybierz płeć:</label><br><br>
+            <label class="plec">Mężczyzna: <input type="radio" name="plec" id="M"></label><br><br>
+            <label class="plec">Kobieta: <input type="radio" name="plec" id="K"></label><br><br>
+
+            <button type="button" id="btn">Potwierdź</button>
+        </form><br><br>
+        <p id="odp"></p>
+    </div>
+    <script>
+        let imie = document.getElementById("imie");
+        let nazwisko = document.getElementById("nazwisko");
+
+        let reg = document.getElementById("reg");
+
+        let m = document.getElementById("M");
+        let k = document.getElementById("K");
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function(){
+            let imieW = imie.value;
+            let nazwiskoW = nazwisko.value;
+
+            let plec;
+
+            let regW = reg.checked;
+            let regO;
+
+            if(m.checked){
+                plec = "Jesteś Mężczyzną"
+            }else{
+                plec = "Jesteś Kobietą"
+            }
+
+            if(regW == true){
+                regO = "Wyraziłeś zgodę!"
+            }else{
+                regO = "Nie Wyraziłeś zgody!"
+            }
+
+            let wynik = ("Twoje imię i nazwisko to: " + imieW + " " + nazwiskoW + "<br><br>" + regO + "<br><br>" + plec)
+
+            document.getElementById("odp").innerHTML = wynik
+        })
+    </script>
+    <div class="div2">
+        <label id="pp">Zmień kolor strony: </label>
+        <select id="kolory">
+            <option>Basic</option>
+            <option>Zielony</option>
+            <option>Czerwony</option>
+            <option>Niebieski</option>
+        </select>
+        <button onclick="zmienKolor()">Zmień</button><br><br>
+
+        <button id="up">Powiększ tekst</button><br><br>
+        <select id="foW">
+            <option>Arial</option>
+            <option>Georgia</option>
+            <option>Monospace</option>
+        </select>
+        <button id="font">Zmień czcionkę</button>
+    </div><br><br>
+    <script>
+        let kolory = document.getElementById("kolory")
+        function zmienKolor(){
+            let kolor = kolory.selectedIndex;
+
+            if(kolor == 0){
+                document.getElementById("back").style.backgroundColor = "#d6d6d6"
+            }else if(kolor == 1){
+                document.getElementById("back").style.backgroundColor = "#33b864"
+            }else if(kolor == 2){
+                document.getElementById("back").style.backgroundColor = "#FF003F"
+            }else{
+                document.getElementById("back").style.backgroundColor = "#00B9FB"
+            }
+        }
+    </script>
+    <script>
+        let up = document.getElementById("up")
+
+        up.addEventListener("click", function(){
+            document.querySelectorAll('label').forEach(label => {
+                label.style.fontSize = "20px";
+            });
+        });
+    </script>
+    <script>
+        let font = document.getElementById("font")
+        let foW = document.getElementById("foW")
+
+        font.addEventListener("click", function(){
+            let fo = foW.selectedIndex
+
+            if(fo == 0){
+                document.getElementById("back").style.fontFamily = "Arial"
+            }else if(fo == 1){
+                document.getElementById("back").style.fontFamily = "Georgia"
+            }else{
+                document.getElementById("back").style.fontFamily = "monospace"
+            }
+        })
+    </script>
+
+    <input type="number" id="a" placeholder="Cyfra a" required>
+    <input type="number" id="b" placeholder="Cyfra b" required>
+    <select id="matma">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+        <option>√</option>
+    </select>
+    <button id="oblicz">Oblicz</button>
+    <p id="wyni"></p>
+    <script>
+        let aa = document.getElementById("a")
+        let ba = document.getElementById("b")
+
+        let matma = document.getElementById("matma")
+        
+        let oblicz = document.getElementById("oblicz")
+
+        oblicz.addEventListener("click", function(){
+            let mt = matma.selectedIndex;
+            let a = parseFloat(aa.value) 
+            let b = parseFloat(ba.value)
+
+            let wyn;
+
+            if(mt == 0){
+                wyn = a + b;
+            }else if(mt == 1){
+                wyn = a - b;
+            }else if(mt == 2){
+                wyn = a * b;
+            }else if(mt == 3){
+                wyn = a/b;
+            }else{
+                wyn = Math.sqrt(a,b)
+            }
+
+            document.getElementById("wyni").innerHTML = wyn;
+        })
+    </script>
+    <br><br><p id="dzien"></p>
+    <script>
+        let date = new Date();
+
+        let day = date.getDay()
+
+        let nd;
+
+        if(day == 0){
+            nd = "niedziela"
+        }else if(day == 1){
+            nd = "poniedziałek"
+        }else if(day == 2){
+            nd = "wtorek"
+        }else if(day == 3){
+            nd = "środa"
+        }else if(day == 4){
+            nd = "czwartek"
+        }else if(day == 5){
+            nd = "piątek"
+        }else if(day == 6){
+            nd = "sobota"
+        }
+
+        document.getElementById("dzien").innerHTML = ("Dzisaj jest " + nd)
+    </script>
+    <p id="db"></p>
+    <script>
+
+        function dzienDobry(){
+            let data = new Date();
+            
+            let godzina = data.getHours();
+
+            if(godzina < 18){
+                return "Dzień dobry!"
+            }else{
+                return "Dobry wieczór!"
+            }
+        }
+
+        document.getElementById("db").innerHTML = dzienDobry()
+    </script>
+    <form>
+        <input type="date" max="2025-12-31" value="2025-01-01" id="start">
+        <input type="date" max="2025-12-31" value="2025-12-31" id="end">
+        <button type="button" id="sprD">Oblicz</button>
+    </form>
+    <p id="dO"></p>
+
+    <script>
+        let start = document.getElementById("start")
+        let end = document.getElementById("end")
+
+        let sprD = document.getElementById("sprD")
+
+        sprD.addEventListener("click", function(){
+            let dataS = new Date(start.value)
+
+            let dataE = new Date(end.value)
+
+            let wynikDa = dataE - dataS
+
+            let wynikDaJ = parseInt(wynikDa)
+
+            let wynikO = wynikDaJ / (1000 * 3600 * 24)
+
+            let wynik0 = wynikO.toFixed(0)
+
+            document.getElementById("dO").innerHTML = wynik0
+        })
+    </script>
+</body>
+</html>

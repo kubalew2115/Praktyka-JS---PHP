@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="number" id="input">
+        <button type="button" id="button">Przelicz na binarny</button>
+    </form>
+    <p id="odp"></p>
+    <script>
+        let input = document.getElementById("input")
+        let button = document.getElementById("button")
+
+        button.addEventListener("click" ,function(){
+            let L = parseInt(input.value)
+            let B = ""
+            
+            while(L>0){
+                B += L%2
+                L = Math.floor(L/2)
+            }
+            wyn = B.split("").reverse().join("")
+
+            wynik = (wyn + "<sub>(2)</sub>")
+
+            document.getElementById("odp").innerHTML = wynik
+        })
+    </script>
+</body>
+</html>

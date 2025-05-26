@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let d = new Date();
+        let day = d.getDay();
+        let month = d.getMonth();
+        let year = d.getFullYear();
+        document.write(day+"/"+month+"/"+year);
+    </script>
+    <script>
+        navigator
+    </script>
+    <script>
+        function sqrtBlock(a){
+            if(a > 0){
+                return Math.sqrt(a);
+            }else{
+                return "Nie można obliczyć pierwiastka z liczby ujemnej";
+            }
+        }
+        console.log(sqrtBlock(4));
+    </script>
+    <script>
+        let tablica = [0, 23, 43, 61, 82]
+        
+        console.log(tablica)
+
+        tablica.pop(5)
+
+        console.log(tablica)
+       
+        tablica.push(100)
+
+        console.log(tablica)
+    </script>
+    <script>
+        let Samochod = {
+            Marka: "Ford",
+            Model: "Focus RS",
+            Rocznik: "2017",
+        }
+
+        function opis(b, m, y){
+            return ("Samochód: " + b + " " + m + " " + y)
+        }
+
+        console.log(opis(Samochod.Marka, Samochod.Model, Samochod.Rocznik))
+    </script>
+</body>
+</html>

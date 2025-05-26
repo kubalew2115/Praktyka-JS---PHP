@@ -1,0 +1,40 @@
+* {
+    font-family: Outfit, sans-serif;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f9feff;
+    margin: 0;
+    padding: 0;
+}
+div {
+    text-align: center;
+    margin: 20px;
+}
+h1, h2 {
+    margin: 10px 0;
+}
+p {
+    font-size: 1.2em;
+}
+pre {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    color: #D73A49;
+    padding: 10px;
+    padding-top: 25px;
+    width: 90%;
+    max-width: 600px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: solid rgb(148, 148, 148) 2px;
+    border-radius: 15px;
+}
+@media screen and (max-width: 480px) {
+    pre {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="back">
+    <form>
+        <input type="text" id="imie">
+        <input type="text" id="nazwisko">
+        <button type="button" id="btn">Wyświetl</button>
+    </form>
+    <br> 
+    <p id="imieW"></p>
+    <script>
+        let imie = document.getElementById("imie")
+        let nazwisko = document.getElementById("nazwisko")
+        let btn = document.getElementById("btn")
+
+        btn.addEventListener("click", function(){
+            let imieW = imie.value
+            let nazwiskoW = nazwisko.value
+
+            let pin = ("Twoje imie i nazwisko to: " + imieW + " " + nazwiskoW)
+
+            document.getElementById("imieW").innerHTML = pin
+            
+        })
+    </script>
+    <form>
+        <label>Zaakceptuj warunki:<input type="checkbox" id="zgoda"></label>
+        <button type="button" id="btn1">Akceptuj</button>
+    </form>
+    <p id="zgodaW"></p><br>
+    <script>
+        let zgoda = document.getElementById("zgoda")
+        let btn1 = document.getElementById("btn1")
+
+        btn1.addEventListener("click", function(){
+            let zgodaW = zgoda.checked;
+            
+
+            if(zgodaW == true){
+                document.getElementById("zgodaW").innerHTML = "Wyraziłeś zgode!"
+            }else{
+                document.getElementById("zgodaW").innerHTML = "Nie wyraziłeś zgody!"
+            }
+        })
+    </script>
+    <form>
+        <select id="plec">
+            <option value="1">Mężczyzna</option>
+            <option value="2">Kobieta</option>
+        </select>
+        <button type="button" id="btn2">Wybierz</button>
+    </form><br>
+    <p id="plecI"></p><br>
+    <script>
+        let plec = document.getElementById("plec")
+        let btn2 = document.getElementById("btn2")
+
+        btn2.addEventListener("click", function(){
+            let plecW = plec.selectedIndex
+
+            if(plecW == 0){
+                document.getElementById("plecI").innerHTML = "Jesteś mężczyzną"
+            }else{
+                document.getElementById("plecI").innerHTML = "Jesteś kobietą"
+            }
+        })
+    </script>
+    <form>
+        <select id="kolor">
+            <option value="1">Czerwony</option>
+            <option value="2">Zielony</option>
+            <option value="3">Niebieski</option>
+        </select>
+        <button type="button" id="btn3">Zmień kolor</button>
+    </form><br>
+    <script>
+        let kolor = document.getElementById("kolor")
+        let btn3 = document.getElementById("btn3")
+
+        btn3.addEventListener("click", function(){
+            let kolorW = kolor.selectedIndex
+
+            if(kolorW == 0){
+                document.getElementById("back").style.backgroundColor = "rgb(215, 120, 120)"
+            }else if(kolorW == 1){
+                document.getElementById("back").style.backgroundColor = "rgb(135, 228, 119)"
+            }else{
+                document.getElementById("back").style.backgroundColor = "rgb(100, 152, 229)"
+            }
+        })
+    </script>
+    <form style="border: 1px solid black; padding: 10px;">
+        <label>Imię: <input type="text" id="nick"></label><br><br>
+        <label>Wiek: <input type="number" id="wiek"></label><br><br>
+        <label>Sposób kontaktu: <select id="kontakt">
+            <option value="1">Telefon</option> 
+            <option value="2">E-Mail</option>
+        </select></label><br><br>
+        <label>Akceptuj warunki:<input type="checkbox" id="akcept"></label><br><br>
+        <button type="button" id="wyslij">Wyślij</button>
+    </form><br>
+    <p id="wynikF"></p>
+    <script>
+        let nick = document.getElementById("nick")
+        let wiek = document.getElementById("wiek")
+        let kontakt = document.getElementById("kontakt")
+        let akcept = document.getElementById("akcept")
+        let wyslij = document.getElementById("wyslij")
+
+        wyslij.addEventListener("click", function(){
+            let nickW = nick.value;
+            let wiekW = wiek.value;
+            let kontaktW = kontakt.selectedIndex;
+            let akceptW = akcept.checked;
+
+            let ackeptO;
+
+            if(akceptW == true){
+                ackeptO = "Zaakceptowałeś warunki"
+            }else{
+                ackeptO = "Nie zaakceptowałeś warunków"
+            }
+
+            if(kontaktW == 0){
+                document.getElementById("wynikF").innerHTML = ("Twoje imię to: " + nickW + "<br>" + "Masz " + wiekW + " lat" + "<br>" + "Wybrałeś opcje kontaktu: Telefon" + "<br>" + ackeptO)
+            }else{
+                document.getElementById("wynikF").innerHTML =("Twoje imię to: " + nickW + "<br>" + "Masz " + wiekW + " lat" + "<br>" + "Wybrałeś opcje kontaktu: E-mail" + "<br>" + ackeptO)
+            }
+        })
+    </script>
+</body>
+</html>

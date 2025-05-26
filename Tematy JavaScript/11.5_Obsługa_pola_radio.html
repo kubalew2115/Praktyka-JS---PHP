@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <from>
+        <label><input type="radio" name="wyb" value="pty" id="pyt"> Python</label><br>
+        <label><input type="radio" name="wyb" value="java" id="java"> Java</label><br>
+        <label><input type="radio" name="wyb" value="cpp" id="cpp"> C++</label><br><br>
+        <button type="button" id="btn" >Wybierz</button>
+    </from>
+    <p id="odp"></p>
+    <script>
+        let btn = document.getElementById("btn");
+
+        let pyt = document.getElementById("pyt");
+        let java= document.getElementById("java");
+        let cpp= document.getElementById("cpp");
+
+        
+        btn.addEventListener("click", function(){
+            let wynik;
+            if(pyt.checked){
+                wynik = "Wybrałeś Python"
+            }else if(java.checked){
+                wynik = "Wybrałeś Java"
+            }else{
+                wynik = "Wybrałeś C++"
+            }
+
+            document.getElementById("odp").innerHTML = wynik
+        })
+    </script>
+    <
+</body>
+</html>

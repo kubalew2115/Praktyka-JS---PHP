@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h1>1. Wyswietlanie zawartosci JS w HTML w znaczniku</h1>
+        <h2>Output:</h2>
+        <p id="demo"></p>
+        <script>
+            document.getElementById("demo").innerHTML = "Tekst z Java script";
+        </script>
+        <h2>Kod:</h2>
+        <pre>
+            &lt;p id="demo"&gt;&lt;/p&gt;<br>
+            &lt;script&gt;
+                document.getElementById("demo").innerHTML = "Tekst z Java script";
+            &lt;/script&gt;
+        </pre>
+        <hr>
+    </div>
+    <div>
+        <h1>2. Wyswietlanie zawartosci JS w HTML</h1>
+        <h2>Output:</h2>
+
+        <script>
+            document.write(5+6)
+        </script>
+        <h2>Kod:</h2>
+        <pre>
+            &lt;script&gt;
+                document.write(5+6)
+            &lt;/script&gt;
+            </pre>
+        <hr>
+    </div>
+    <div>
+        <h1>3. Alert w oknie</h1>
+        <h2>Output:</h2>
+            <button type="button" onclick="window.alert(6+5)">Test</button>
+        <script>
+            
+        </script>
+        <h2>Kod:</h2>
+        <pre>
+            &lt;button type="button" onclick="window.alert(6+5)"&gt;Test&lt;/button&gt;
+        </pre>
+        <hr>
+    </div>
+    <div>
+        <h1>4. Wyswietlanie w konsoli</h1>
+        <h2>Output:</h2>
+            <i>Zobacz konsole</i>
+        <script>
+            console.log("Test konsoli")
+        </script>
+        <h2>Kod:</h2>
+        <pre>
+            &lt;script&gt;
+                console.log("Test konsoli")
+            &lt;/script&gt;
+        </pre>
+        <hr>
+    </div>
+    <div>
+        <h1>5. Zmienna i Cyfry w JS (var - Numer)</h1>
+        <h2>Output:</h2>
+        <p id="Cyfra"></p>
+        <script>
+            var x, y, z;
+            x = 5;
+            y = 5;
+            z = x * y;
+            document.getElementById("Cyfra").innerHTML = z;
+        </script>
+        <h2>Kod:</h2>
+        <pre>
+            &lt;script&gt;
+                var x, y, z;
+                x = 5;
+                y = 5;
+                z = x * y;
+                document.getElementById("Cyfra").innerHTML = z;
+            &lt;/script&gt;
+        </pre>
+        <hr>
+    </div>
+    <div>
+        <h1>6. Zmienna Tekstowa w JS (let - String)</h1>
+        <h2>Output:</h2>
+        <p id="Slowo"></p>
+        <p id="Slowo1"></p>
+        <p id="Slowo2"></p>
+        <script>
+            let Auto, Cena, Rocznik;
+            Auto = "Audi A5"
+            Cena = "139.000 PLN"
+            Rocznik = "2017"
+            document.getElementById("Slowo").innerHTML = Auto;
+            document.getElementById("Slowo1").innerHTML = Cena;
+            document.getElementById("Slowo2").innerHTML = Rocznik;
+        </script>
+        <h2>Kod:</h2>
+        <pre>
+            &lt;p id="Slowo"&gt;&lt;/p&gt;
+            &lt;p id="Slowo1"&gt;&lt;/p&gt;
+            &lt;p id="Slowo2"&gt;&lt;/p&gt;
+            &lt;script&gt;
+                let Auto, Cena, Rocznik;
+                Auto = "Audi A5";
+                Cena = "139.000 PLN";
+                Rocznik = "2017";
+                document.getElementById("Slowo").innerHTML = Auto;
+                document.getElementById("Slowo1").innerHTML = Cena;
+                document.getElementById("Slowo2").innerHTML = Rocznik;
+            &lt;/script&gt;
+        </pre>
+        <hr>
+    </div>
+    <div>
+        <h1>7. Tablice (const)</h1>
+        <h2>Output:</h2>
+        <p id="tablica"></p>
+        <script>
+            const Auta = ["Audi", "Mercedes", "Ford", "BMW", "Lexus"];
+            Auta[4] = "Nissan";
+            Auta.push("Mitsubishi");
+            document.getElementById("tablica").innerHTML = Auta;
+        </script>
+        <h2>Kod:</h2>
+        <pre>
+            &lt;p id="tablica"&gt;&lt;/p&gt;
+            &lt;script&gt;
+                const Auta = ["Audi", "Mercedes", "Ford", "BMW", "Lexus"];
+                Auta[4] = "Nissan";
+                Auta.push("Mitsubishi");
+                document.getElementById("tablica").innerHTML = Auta;
+            &lt;/script&gt;
+        </pre>
+        <hr>
+    </div>
+    <div>
+        <h1>8. Operatory</h1>
+        <h2>Output:</h2>
+        <p id="op"></p>
+        <p id="op1"></p>
+        <p id="op2"></p>
+        <script>
+            var x;
+            x = 4;
+            x += 5; //Dodaje wartość 5 do x
+            document.getElementById("op").innerHTML = x;
+            var a,b,c;
+            a = 14;
+            b = 3;
+            c = a % b; //Reszta z dzielenia
+            document.getElementById("op1").innerHTML = c;
+            let d = 6;
+            d ++; //Dodaje o jeden do zmiennej d
+            let e = d;
+            document.getElementById("op2").innerHTML = e;
+        </script>
+        <h2>Kod:</h2>
+        <pre>
+            &lt;p id="op"&gt;&lt;/p&gt;
+            &lt;p id="op1"&gt;&lt;/p&gt;
+            &lt;p id="op2"&gt;&lt;/p&gt;
+            &lt;script&gt;
+                var x;
+                x = 4;
+                x += 5; //Dodaje wartość 5 do x
+                document.getElementById("op").innerHTML = x;
+                var a,b,c;
+                a = 14;
+                b = 3;
+                c = a % b; //Reszta z dzielenia
+                document.getElementById("op1").innerHTML = c;
+                let d = 6;
+                d ++;
+                let e = d //Dodaje o jeden do zmiennej d;
+                document.getElementById("op2").innerHTML = e;
+            &lt;/script&gt;
+        </pre>      
+        <hr>
+    </div>
+    <div>
+        <h1>9. Funkcja</h1>
+        <h2>Output:</h2>
+        <p id="func"></p>
+        <script>
+            let k = matFunction(a, b, c, d);
+            document.getElementById("func").innerHTML = k;
+
+            function matFunction(a, b, c, d){
+                a = 5;
+                b = 7;
+                c = 6;
+                d = (a * b) + c;
+                return d;
+            }
+        </script>
+        <h2>Kod:</h2>
+        <pre>
+            &lt;p id="func"&gt;&lt;/p&gt;
+            &lt;script&gt;
+                let k = matFunction(a, b, c, d);
+                document.getElementById("func").innerHTML = k;
+            
+                function matFunction(a, b, c, d){
+                    a = 5;
+                    b = 7;
+                    c = 6;
+                    d = (a * b) + c;
+                    return d;
+                }
+            &lt;/script&gt;
+        </pre>   
+        <hr>
+    </div>
+    <div>
+        <h1>10.Obiekty tablicy JS</h1>
+        <h2>Output:</h2>
+        <p id="obiekt"></p>
+        <script>
+            const osoby = {};
+            osoby.imie = "Janek";
+            osoby.nazwisko = "Lewandowski";
+            osoby.wiek = "50";
+            osoby.kolorOczu = "Niebieski";
+            osoby.pelneImie = function(){
+                return this.imie + " " + this.nazwisko;
+            }
+            const o = osoby
+            document.getElementById("obiekt").innerHTML = "Pełne imię, wiek: " + osoby.pelneImie() + ", " + osoby.wiek;
+        </script>
+        <h2>Kod:</h2>
+        <pre>
+            &lt;p id="obiekt"&gt;&lt;/p&gt;
+            &lt;script&gt;
+                const osoby = {};
+                osoby.imie = "Janek";
+                osoby.nazwisko = "Lewandowski";
+                osoby.wiek = "50";
+                osoby.kolorOczu = "Niebieski";
+                osoby.pelneImie = function(){
+                    return this.imie + " " + this.nazwisko;
+                }
+                const o = osoby
+                document.getElementById("obiekt").innerHTML = "Pełne imię, wiek: " + osoby.pelneImie() + ", " + osoby.wiek;
+            &lt;/script&gt;
+            </pre>
+            
+        <hr>
+    </div>
+    <div>
+    <a href="https://www.w3schools.com/js/js_object_display.asp" target="_blank">Zkonczylem na tym: Wyswietlanie obiektów JS</a></div>
+</body>
+</html>

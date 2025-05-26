@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkEven(num){
+            let a = num;
+            if (a % 2 == 0){
+                console.log(a + " jest liczba parzysta")
+            }else{
+                console.log(a + " nie jest liczba parzysta")
+            }
+        }
+        checkEven(4)
+    </script>
+    <script>
+        let x = 4;
+        if(x > 0){
+            console.log(x + " jest wieksze od 0")
+        }else if(x < 0){
+            console.log(x + " jest mniejsze od 0")
+        }else{
+            console.log(x + " jest równe 0")
+        }
+    </script>
+    <script>
+        for(let b = 1; b <= 10; b++){
+            let t = 3;
+            console.log(t *= b)
+        }
+
+        console.log(" ")
+    </script>
+    <script>
+        for(let y = 1; y <= 15; y++){
+            if(y % 2 != 0){
+                console.log(y)
+            }
+        }
+
+        console.log(" ")
+    </script>
+    <script>
+        function countDown (n){
+            for(let s = n; s <= 0; s++){
+                console.log(s)
+            }
+        }
+        countDown(-6)
+    </script>
+</body>
+</html>

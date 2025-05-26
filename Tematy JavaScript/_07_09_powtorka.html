@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function bezWzgledna(x){
+            let a = x
+
+            let aB = Math.abs(a)
+            
+            return aB;
+        }
+        document.write(bezWzgledna(-16))
+    </script>
+    <script>
+        let tablica = [5,6,8,2,9]
+
+        let najW = Math.max(...tablica)
+
+        document.write(najW)
+    </script>
+    <script>
+        function toUp(word){
+
+            let ww = word.toUpperCase()
+
+            return ww;
+        }
+        document.write(toUp("Alpaka"))
+    </script>
+    <script>
+        function actualMonth(){
+            let date = new Date();
+
+            let month = date.getMonth() + 1;
+
+            return month;
+        }
+        document.write(actualMonth())
+    </script>
+    <script>
+        let Uczen = {
+            imie: "Kuba",
+            nazwisko: "Lewandowski",
+            klasa: "3G"
+        }
+
+        function daneU (n, s, c){
+            return("Imię ucznia: " + n + " Nazwsiko ucznia: " + s + " Klasa: " + c)
+        }
+
+        document.write(daneU(Uczen.imie, Uczen.nazwisko, Uczen.klasa))
+    </script>
+</body>
+</html>

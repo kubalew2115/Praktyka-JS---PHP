@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let liczby = [1,2,3,4,5];
+
+        let lJ = liczby[0];
+        let lD = liczby[1];
+        let lT = liczby[2];
+        let lC = liczby[3];
+        let lP = liczby[4];
+
+        let wynik = lJ + lD + lT + lC + lP;
+
+        console.log(wynik)
+    </script>
+
+    <script>
+        let imiona = ["Janek", "Krzysztof", "Tymon", "Kajtek"];
+
+        imiona.unshift("Kuba");
+        imiona.unshift("Nikodem");
+        imiona.unshift("Filip");
+
+        console.log(imiona);
+    </script>
+
+    <script>
+        let cyfry = [2, 5, 8, 1, 9];
+
+        let najwieksza = Math.max(...cyfry);
+
+        console.log(najwieksza);
+    </script>
+
+    <script>
+        let owoce = ["banan", "jabłko", "malina", "truskawka"];
+
+        owoce.pop();
+
+        console.log(owoce);
+    </script>
+
+    <script>
+        let cyferki = [10, 20, 30, 40];
+
+        let cJ = cyferki[0];
+        let cD = cyferki[1];
+        let cT = cyferki[2];
+        let cC = cyferki[3];
+
+        let dlugosc = cyferki.length;
+        let suma = cJ + cD + cT + cC;
+
+        let Wynik = suma/dlugosc;
+
+        console.log(Wynik)
+    </script>
+</body>
+</html>

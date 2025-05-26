@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkLength(text){
+            let t = text;
+
+            if(t.length > 10){
+                return("Długi")
+            }else{
+                return("Krótki")
+            }
+        }
+        console.log(checkLength("jdtcpssoddj"))
+    </script>
+
+    <script>
+        let zdanie = "JavaScript to super język"
+        let tablica = zdanie.split(" ")
+
+        console.log(zdanie)
+    </script>
+    <script>
+        for(let i = 1; i < 30; i++){
+            if(i % 3 == 0){
+                console.log(i);
+            }
+        }
+    </script>
+    <script>
+        let samochod = {
+            Marka: "Ford",
+            Model: "Focus RS",
+            Rok: "2017"
+        }
+
+        function pokazInfo(b,m,y){
+            return("Samochód: " + b + " " + m + " " + y);
+        }
+
+        console.log(pokazInfo(samochod.Marka,samochod.Model,samochod.Rok))
+    </script>
+    <script>
+        function isEvenOrOdd(n){
+            if(n % 2 == 0 && n == 4){
+                return("Parzysta")
+            }else{
+                return("Nieparzysta")
+            }
+        }
+        console.log(isEvenOrOdd(4))
+    </script>
+</body>
+</html>

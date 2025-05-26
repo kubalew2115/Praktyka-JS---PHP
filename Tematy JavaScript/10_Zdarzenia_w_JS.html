@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="back">
+    <button id="btn">Kliknij</button>
+    <script>
+        let button = document.getElementById("btn")
+
+        button.addEventListener("click", function (){
+            document.getElementById("btn").innerHTML = "Kliknięto!"
+        })
+    </script>
+    <button onclick="kolor()">Zmień tło</button><br>
+    <script>
+        function kolor(){
+            if(document.getElementById("back").style.backgroundColor == "lightblue"){
+                document.getElementById("back").style.backgroundColor = "white"
+            }else{
+                document.getElementById("back").style.backgroundColor = "lightblue"
+            }
+        }
+    </script>
+    <img src="img/banan.png" onclick="zmien()" id="imgB">
+    <img src="img/apple.png" onclick="zmienA()" id="imgA" style="display: none;"><br>
+    <script>
+        function zmien(){
+            document.getElementById("imgB").style.display = "none"
+            document.getElementById("imgA").style.display = "block"
+        }
+        function zmienA(){
+            document.getElementById("imgA").style.display = "none"
+            document.getElementById("imgB").style.display = "block"
+        }
+    </script>
+    <form>
+        <input id="tekst" type="text">
+        <button type="button" id="btnF">Alert</button>
+        <button type="reset">Usuń</button>
+    </form><br>
+    <script>
+        let tekst = document.getElementById("tekst")
+        let btnF = document.getElementById("btnF")
+
+        btnF.addEventListener("click", function(){
+            let tekstW = tekst.value
+
+            alert(tekstW)
+        })
+    </script>
+    <p onclick="usun()" id="p">Kliknij a zobaczysz :p</p>
+    <script>
+        function usun(){
+            document.getElementById("p").style.display = "none"
+        }
+    </script>
+    <form>
+        <input type="checkbox" id="lol">
+        <button type="button" id="send">Send</button>
+    </form><br>
+    <p id="infoo"></p>
+    <script>
+        let box = document.getElementById("lol")
+        let send = document.getElementById("send")
+        let pi = document.getElementById("infoo")
+
+        send.addEventListener("click", function(){
+            let info = box.checked;
+            
+
+            if(info == true){
+                document.getElementById("infoo").innerHTML = "Checkbox zaznacozny"
+            }else{
+                document.getElementById("infoo").innerHTML = "Checkbox niezaznacozny"
+            }
+        })
+    </script>
+</body>
+</html>
